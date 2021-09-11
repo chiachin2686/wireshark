@@ -449,6 +449,9 @@ value_string_ext ssl_20_cipher_suites_ext = VALUE_STRING_EXT_INIT(ssl_20_cipher_
  * Supported Groups (formerly named "EC Named Curve").
  * https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8
  */
+/*
+ * Add NID and algorithm name of PQC KEM algorithms.
+*/
 const value_string ssl_extension_curves[] = {
     {  1, "sect163k1" },
     {  2, "sect163r1" },
@@ -486,9 +489,88 @@ const value_string ssl_extension_curves[] = {
     { 258, "ffdhe4096" }, /* RFC 7919 */
     { 259, "ffdhe6144" }, /* RFC 7919 */
     { 260, "ffdhe8192" }, /* RFC 7919 */
+    { 512, "frodo640aes" }, /* PQC */
+    { 513, "frodo640shake" }, /* PQC */
+    { 514, "frodo976aes" }, /* PQC */
+    { 515, "frodo976shake" }, /* PQC */
+    { 516, "frodo1344aes" }, /* PQC */
+    { 517, "frodo1344shake" }, /* PQC */
+    { 532, "ntru_hps2048509" }, /* PQC */
+    { 533, "ntru_hps2048677" }, /* PQC */
+    { 534, "ntru_hps4096821" }, /* PQC */
+    { 535, "ntru_hrss701" }, /* PQC */
+    { 536, "lightsaber" }, /* PQC */
+    { 537, "saber" }, /* PQC */
+    { 538, "firesaber" }, /* PQC */
+    { 539, "sidhp434" }, /* PQC */
+    { 540, "sidhp503" }, /* PQC */
+    { 541, "sidhp610" }, /* PQC */
+    { 542, "sidhp751" }, /* PQC */
+    { 543, "sikep434" }, /* PQC */
+    { 544, "sikep503" }, /* PQC */
+    { 545, "sikep610" }, /* PQC */
+    { 546, "sikep751" }, /* PQC */
+    { 556, "hqc128" }, /* PQC */
+    { 557, "hqc192" }, /* PQC */
+    { 558, "hqc256" }, /* PQC */
+    { 559, "ntrulpr653" }, /* PQC */
+    { 560, "ntrulpr761" }, /* PQC */
+    { 561, "ntrulpr857" }, /* PQC */
+    { 562, "sntrup653" }, /* PQC */
+    { 563, "sntrup761" }, /* PQC */
+    { 564, "sntrup857" }, /* PQC */
+    { 568, "bikel1" }, /* PQC */
+    { 570, "kyber512" }, /* PQC */
+    { 571, "bikel3" }, /* PQC */
+    { 572, "kyber768" }, /* PQC */
+    { 573, "kyber1024" }, /* PQC */
+    { 574, "kyber90s512" }, /* PQC */
+    { 575, "kyber90s768" }, /* PQC */
+    { 576, "kyber90s1024" }, /* PQC */
     { 2570, "Reserved (GREASE)" }, /* RFC 8701 */
     { 6682, "Reserved (GREASE)" }, /* RFC 8701 */
     { 10794, "Reserved (GREASE)" }, /* RFC 8701 */
+    { 12032, "p256_frodo640aes" }, /* PQC */
+    { 12033, "p256_frodo640shake" }, /* PQC */
+    { 12034, "p384_frodo976aes" }, /* PQC */
+    { 12035, "p384_frodo976shake" }, /* PQC */
+    { 12036, "p521_frodo1344aes" }, /* PQC */
+    { 12037, "p521_frodo1344shake" }, /* PQC */
+    { 12052, "p256_ntru_hps2048509" }, /* PQC */
+    { 12053, "p384_ntru_hps2048677" }, /* PQC */
+    { 12054, "p521_ntru_hps4096821" }, /* PQC */
+    { 12055, "p384_ntru_hrss701" }, /* PQC */
+    { 12056, "p256_lightsaber" }, /* PQC */
+    { 12057, "p384_saber" }, /* PQC */
+    { 12058, "p521_firesaber" }, /* PQC */
+    { 12059, "p256_sidhp434" }, /* PQC */
+    { 12060, "p256_sidhp503" }, /* PQC */
+    { 12061, "p384_sidhp610" }, /* PQC */
+    { 12062, "p521_sidhp751" }, /* PQC */
+    { 12063, "p256_sikep434" }, /* PQC */
+    { 12064, "p256_sikep503" }, /* PQC */
+    { 12065, "p384_sikep610" }, /* PQC */
+    { 12066, "p521_sikep751" }, /* PQC */
+    { 12071, "x25519_sikep434" }, /* PQC */
+    { 12076, "p256_hqc128" }, /* PQC */
+    { 12077, "p384_hqc192" }, /* PQC */
+    { 12078, "p521_hqc256" }, /* PQC */
+    { 12079, "p256_ntrulpr653" }, /* PQC */
+    { 12080, "p384_ntrulpr761" }, /* PQC */
+    { 12081, "p384_ntrulpr857" }, /* PQC */
+    { 12082, "p256_sntrup653" }, /* PQC */
+    { 12083, "p384_sntrup761" }, /* PQC */
+    { 12084, "p384_sntrup857" }, /* PQC */
+    { 12087, "x25519_bikel1" }, /* PQC */
+    { 12088, "p256_bikel1" }, /* PQC */
+    { 12089, "x25519_kyber512" }, /* PQC */
+    { 12090, "p256_kyber512" }, /* PQC */
+    { 12091, "p384_bikel3" }, /* PQC */
+    { 12092, "p384_kyber768" }, /* PQC */
+    { 12093, "p521_kyber1024" }, /* PQC */
+    { 12094, "p256_kyber90s512" }, /* PQC */
+    { 12095, "p384_kyber90s768" }, /* PQC */
+    { 12096, "p521_kyber90s1024" }, /* PQC */
     { 14906, "Reserved (GREASE)" }, /* RFC 8701 */
     { 19018, "Reserved (GREASE)" }, /* RFC 8701 */
     { 23130, "Reserved (GREASE)" }, /* RFC 8701 */
@@ -1288,6 +1370,9 @@ const value_string tls_signature_algorithm[] = {
 };
 
 /* RFC 8446 Section 4.2.3 */
+/*
+ * Add NID and algorithm name of PQC SIG algorithms.
+*/
 const value_string tls13_signature_algorithm[] = {
     { 0x0201, "rsa_pkcs1_sha1" },
     { 0x0203, "ecdsa_sha1" },
@@ -1306,6 +1391,146 @@ const value_string tls13_signature_algorithm[] = {
     { 0x0809, "rsa_pss_pss_sha256" },
     { 0x080a, "rsa_pss_pss_sha384" },
     { 0x080b, "rsa_pss_pss_sha512" },
+    { 0xfe0b, "falcon512" }, /* PQC */
+    { 0xfe0c, "p256_falcon512" }, /* PQC */
+    { 0xfe0d, "rsa3072_falcon512" }, /* PQC */
+    { 0xfe0e, "falcon1024" }, /* PQC */
+    { 0xfe0f, "p521_falcon1024" }, /* PQC */
+    { 0xfe15, "picnicl1fs" }, /* PQC */
+    { 0xfe16, "p256_picnicl1fs" }, /* PQC */
+    { 0xfe17, "rsa3072_picnicl1fs" }, /* PQC */
+    { 0xfe18, "picnicl1ur" }, /* PQC */
+    { 0xfe19, "p256_picnicl1ur" }, /* PQC */
+    { 0xfe1a, "rsa3072_picnicl1ur" }, /* PQC */
+    { 0xfe1b, "picnic3l1" }, /* PQC */
+    { 0xfe1c, "p256_picnic3l1" }, /* PQC */
+    { 0xfe1d, "rsa3072_picnic3l1" }, /* PQC */
+    { 0xfe1e, "picnic3l3" }, /* PQC */
+    { 0xfe1f, "p384_picnic3l3" }, /* PQC */
+    { 0xfe20, "picnic3l5" }, /* PQC */
+    { 0xfe21, "p521_picnic3l5" }, /* PQC */
+    { 0xfe27, "rainbowIclassic" }, /* PQC */
+    { 0xfe28, "p256_rainbowIclassic" }, /* PQC */
+    { 0xfe29, "rsa3072_rainbowIclassic" }, /* PQC */
+    { 0xfe30, "rainbowIcircumzenithal" }, /* PQC */
+    { 0xfe31, "p256_rainbowIcircumzenithal" }, /* PQC */
+    { 0xfe32, "rsa3072_rainbowIcircumzenithal" }, /* PQC */
+    { 0xfe33, "rainbowIcompressed" }, /* PQC */
+    { 0xfe34, "p256_rainbowIcompressed" }, /* PQC */
+    { 0xfe35, "rsa3072_rainbowIcompressed" }, /* PQC */
+    { 0xfe36, "rainbowIIIclassic" }, /* PQC */
+    { 0xfe37, "p384_rainbowIIIclassic" }, /* PQC */
+    { 0xfe38, "rainbowIIIcircumzenithal" }, /* PQC */
+    { 0xfe39, "p384_rainbowIIIcircumzenithal" }, /* PQC */
+    { 0xfe3a, "rainbowIIIcompressed" }, /* PQC */
+    { 0xfe3b, "p384_rainbowIIIcompressed" }, /* PQC */
+    { 0xfe3c, "rainbowVclassic" }, /* PQC */
+    { 0xfe3d, "p521_rainbowVclassic" }, /* PQC */
+    { 0xfe3e, "rainbowVcircumzenithal" }, /* PQC */
+    { 0xfe3f, "p521_rainbowVcircumzenithal" }, /* PQC */
+    { 0xfe40, "rainbowVcompressed" }, /* PQC */
+    { 0xfe41, "p521_rainbowVcompressed" }, /* PQC */
+    { 0xfe42, "sphincsharaka128frobust" }, /* PQC */
+    { 0xfe43, "p256_sphincsharaka128frobust" }, /* PQC */
+    { 0xfe44, "rsa3072_sphincsharaka128frobust" }, /* PQC */
+    { 0xfe45, "sphincsharaka128fsimple" }, /* PQC */
+    { 0xfe46, "p256_sphincsharaka128fsimple" }, /* PQC */
+    { 0xfe47, "rsa3072_sphincsharaka128fsimple" }, /* PQC */
+    { 0xfe48, "sphincsharaka128srobust" }, /* PQC */
+    { 0xfe49, "p256_sphincsharaka128srobust" }, /* PQC */
+    { 0xfe4a, "rsa3072_sphincsharaka128srobust" }, /* PQC */
+    { 0xfe4b, "sphincsharaka128ssimple" }, /* PQC */
+    { 0xfe4c, "p256_sphincsharaka128ssimple" }, /* PQC */
+    { 0xfe4d, "rsa3072_sphincsharaka128ssimple" }, /* PQC */
+    { 0xfe4e, "sphincsharaka192frobust" }, /* PQC */
+    { 0xfe4f, "p384_sphincsharaka192frobust" }, /* PQC */
+    { 0xfe50, "sphincsharaka192fsimple" }, /* PQC */
+    { 0xfe51, "p384_sphincsharaka192fsimple" }, /* PQC */
+    { 0xfe52, "sphincsharaka192srobust" }, /* PQC */
+    { 0xfe53, "p384_sphincsharaka192srobust" }, /* PQC */
+    { 0xfe54, "sphincsharaka192ssimple" }, /* PQC */
+    { 0xfe55, "p384_sphincsharaka192ssimple" }, /* PQC */
+    { 0xfe56, "sphincsharaka256frobust" }, /* PQC */
+    { 0xfe57, "p521_sphincsharaka256frobust" }, /* PQC */
+    { 0xfe58, "sphincsharaka256fsimple" }, /* PQC */
+    { 0xfe59, "p521_sphincsharaka256fsimple" }, /* PQC */
+    { 0xfe5a, "sphincsharaka256srobust" }, /* PQC */
+    { 0xfe5b, "p521_sphincsharaka256srobust" }, /* PQC */
+    { 0xfe5c, "sphincsharaka256ssimple" }, /* PQC */
+    { 0xfe5d, "p521_sphincsharaka256ssimple" }, /* PQC */
+    { 0xfe5e, "sphincssha256128frobust" }, /* PQC */
+    { 0xfe5f, "p256_sphincssha256128frobust" }, /* PQC */
+    { 0xfe60, "rsa3072_sphincssha256128frobust" }, /* PQC */
+    { 0xfe61, "sphincssha256128fsimple" }, /* PQC */
+    { 0xfe62, "p256_sphincssha256128fsimple" }, /* PQC */
+    { 0xfe63, "rsa3072_sphincssha256128fsimple" }, /* PQC */
+    { 0xfe64, "sphincssha256128srobust" }, /* PQC */
+    { 0xfe65, "p256_sphincssha256128srobust" }, /* PQC */
+    { 0xfe66, "rsa3072_sphincssha256128srobust" }, /* PQC */
+    { 0xfe67, "sphincssha256128ssimple" }, /* PQC */
+    { 0xfe68, "p256_sphincssha256128ssimple" }, /* PQC */
+    { 0xfe69, "rsa3072_sphincssha256128ssimple" }, /* PQC */
+    { 0xfe6a, "sphincssha256192frobust" }, /* PQC */
+    { 0xfe6b, "p384_sphincssha256192frobust" }, /* PQC */
+    { 0xfe6c, "sphincssha256192fsimple" }, /* PQC */
+    { 0xfe6d, "p384_sphincssha256192fsimple" }, /* PQC */
+    { 0xfe6e, "sphincssha256192srobust" }, /* PQC */
+    { 0xfe6f, "p384_sphincssha256192srobust" }, /* PQC */
+    { 0xfe70, "sphincssha256192ssimple" }, /* PQC */
+    { 0xfe71, "p384_sphincssha256192ssimple" }, /* PQC */
+    { 0xfe72, "sphincssha256256frobust" }, /* PQC */
+    { 0xfe73, "p521_sphincssha256256frobust" }, /* PQC */
+    { 0xfe74, "sphincssha256256fsimple" }, /* PQC */
+    { 0xfe75, "p521_sphincssha256256fsimple" }, /* PQC */
+    { 0xfe76, "sphincssha256256srobust" }, /* PQC */
+    { 0xfe77, "p521_sphincssha256256srobust" }, /* PQC */
+    { 0xfe78, "sphincssha256256ssimple" }, /* PQC */
+    { 0xfe79, "p521_sphincssha256256ssimple" }, /* PQC */
+    { 0xfe7a, "sphincsshake256128frobust" }, /* PQC */
+    { 0xfe7b, "p256_sphincsshake256128frobust" }, /* PQC */
+    { 0xfe7c, "rsa3072_sphincsshake256128frobust" }, /* PQC */
+    { 0xfe7d, "sphincsshake256128fsimple" }, /* PQC */
+    { 0xfe7e, "p256_sphincsshake256128fsimple" }, /* PQC */
+    { 0xfe7f, "rsa3072_sphincsshake256128fsimple" }, /* PQC */
+    { 0xfe80, "sphincsshake256128srobust" }, /* PQC */
+    { 0xfe81, "p256_sphincsshake256128srobust" }, /* PQC */
+    { 0xfe82, "rsa3072_sphincsshake256128srobust" }, /* PQC */
+    { 0xfe83, "sphincsshake256128ssimple" }, /* PQC */
+    { 0xfe84, "p256_sphincsshake256128ssimple" }, /* PQC */
+    { 0xfe85, "rsa3072_sphincsshake256128ssimple" }, /* PQC */
+    { 0xfe86, "sphincsshake256192frobust" }, /* PQC */
+    { 0xfe87, "p384_sphincsshake256192frobust" }, /* PQC */
+    { 0xfe88, "sphincsshake256192fsimple" }, /* PQC */
+    { 0xfe89, "p384_sphincsshake256192fsimple" }, /* PQC */
+    { 0xfe8a, "sphincsshake256192srobust" }, /* PQC */
+    { 0xfe8b, "p384_sphincsshake256192srobust" }, /* PQC */
+    { 0xfe8c, "sphincsshake256192ssimple" }, /* PQC */
+    { 0xfe8d, "p384_sphincsshake256192ssimple" }, /* PQC */
+    { 0xfe8e, "sphincsshake256256frobust" }, /* PQC */
+    { 0xfe8f, "p521_sphincsshake256256frobust" }, /* PQC */
+    { 0xfe90, "sphincsshake256256fsimple" }, /* PQC */
+    { 0xfe91, "p521_sphincsshake256256fsimple" }, /* PQC */
+    { 0xfe92, "sphincsshake256256srobust" }, /* PQC */
+    { 0xfe93, "p521_sphincsshake256256srobust" }, /* PQC */
+    { 0xfe94, "sphincsshake256256ssimple" }, /* PQC */
+    { 0xfe95, "p521_sphincsshake256256ssimple" }, /* PQC */
+    { 0xfe96, "picnicl1full" }, /* PQC */
+    { 0xfe97, "p256_picnicl1full" }, /* PQC */
+    { 0xfe98, "rsa3072_picnicl1full" }, /* PQC */
+    { 0xfea0, "dilithium2" }, /* PQC */
+    { 0xfea1, "p256_dilithium2" }, /* PQC */
+    { 0xfea2, "rsa3072_dilithium2" }, /* PQC */
+    { 0xfea3, "dilithium3" }, /* PQC */
+    { 0xfea4, "p384_dilithium3" }, /* PQC */
+    { 0xfea5, "dilithium5" }, /* PQC */
+    { 0xfea6, "p521_dilithium5" }, /* PQC */
+    { 0xfea7, "dilithium2_aes" }, /* PQC */
+    { 0xfea8, "p256_dilithium2_aes" }, /* PQC */
+    { 0xfea9, "rsa3072_dilithium2_aes" }, /* PQC */
+    { 0xfeaa, "dilithium3_aes" }, /* PQC */
+    { 0xfeab, "p384_dilithium3_aes" }, /* PQC */
+    { 0xfeac, "dilithium5_aes" }, /* PQC */
+    { 0xfead, "p521_dilithium5_aes" }, /* PQC */
     { 0, NULL }
 };
 
